@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        body {
+            background: grey;
+        }
+        .container {
+            /* border: 1px solid black; */
+            font-family: cursive;
+            /* height: 80vh; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 30px;
+            text-shadow: 5px 5px 10px #e0dede;
+            margin: 10px;
+            border-radius: 50px;
+            /* box-shadow: 0 0 5px #e0dede; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>India</h1>
+    <h1 id="showTime"></h1>
+</div>
+
+
+
+<script>
+    var option = {weekday: "long", year: "numeric", month: "long", day:"numeric"};
+    var clock = setInterval(clockTime, 1000);
+    function clockTime(){
+    a = new Date();
+    b = a.toLocaleTimeString();
+    c = a.toLocaleDateString(undefined, option);
+
+    document.getElementById('showTime').innerHTML = "Current time is "+ b + "<br>On "+ c;
+}
+</script>
+</body>
+</html>
